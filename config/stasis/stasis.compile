@@ -1,3 +1,5 @@
 #!/bin/bash   
 cd src/
-make -f makefile.unix
+mkdir -p obj
+chmod u+x leveldb/build_detect_platform
+make -f makefile.unix USE_UPNP=-
