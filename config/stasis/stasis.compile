@@ -1,5 +1,8 @@
-#!/bin/bash   
+#!/bin/bash
+
 cd src/
 mkdir -p obj
 chmod u+x leveldb/build_detect_platform
+cd secp256k1 && chmod u+x ./autogen.sh && ./autogen.sh && ./configure --enable-module-recovery && make && cd ..
 make -f makefile.unix USE_UPNP=-
+cp Stasisd ${MNODE_DAEMON}
